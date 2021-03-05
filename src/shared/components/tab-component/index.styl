@@ -1,0 +1,42 @@
+$main = #D62828
+$secondary = #F8F8F8
+$third = #111111
+$fourd = #F77F00
+
+.tabContainer
+    padding: 10px
+    font-family: monospace
+    background: $secondary
+    color: $third
+    font-weight: 400
+    font-weight: 700
+    font-size: 0.82rem
+    letter-spacing: 0.8px
+
+    a
+        display: inline-block
+        color: $fourd
+        font-size: .85rem
+        margin: 4px 0
+
+    .artist, .songName
+        text-transform: capitalize;
+        font-size: 0.85rem;
+        margin: 7px 0px;
+        // border-bottom: solid 1px #111111;
+        padding-bottom: 7px;
+        padding-left: 0px;
+        // margin-right: 117px;
+
+    pre
+        white-space: pre-wrap;
+        word-break: keep-all
+
+
+@media (max-width: 600px) 
+    .artist, .songName 
+        // margin-right: 0 !important
+        border-bottom: none
+        text-align: center
+
+    

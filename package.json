@@ -38,6 +38,7 @@
     "express": "^4.16.4",
     "helmet": "^3.16.0",
     "react": "^16.8.6",
+    "react-autosuggest": "^10.1.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "react-universal-component": "^4.0.0",
