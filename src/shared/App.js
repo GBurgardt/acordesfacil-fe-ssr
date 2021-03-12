@@ -19,8 +19,9 @@ export default class App extends Component {
                     <title>Acordesfacil</title>
                 </Helmet>
 
-                <UniversalComponent name="search-component" />
-                <UniversalComponent name="tab-component" />
+                <UniversalComponent name="home-component" />
+                {/* <UniversalComponent name="search-component" /> */}
+                {/* <UniversalComponent name="tab-component" /> */}
             </div>
         );
     }

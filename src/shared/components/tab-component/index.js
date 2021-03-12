@@ -6,7 +6,7 @@ const TabComponent = () => {
     const [tab, setTab] = useState(0);
     
     useEffect(() => {
-        fetch('http://192.168.0.243:3001/rata_blanca/mujer_amante')
+        fetch('http://192.168.0.243:3001/charly_garcia/no_soy_un_extranio')
             .then(res=>res.clone().json())
             .then(
                 res => {

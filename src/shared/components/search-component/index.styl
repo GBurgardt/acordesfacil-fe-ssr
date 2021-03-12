@@ -1,11 +1,21 @@
-.react-autosuggest__input {
-    width: 240px;
-    height: 30px;
-    padding: 10px 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    -webkit-appearance: none;
+.searchContainer {
+    display: flex;
+    justify-content: center;
+
+    > div > input:focus {
+        outline: none;
+    }
+    > div > input {
+        width: 207px;
+        height: 15px;
+        padding: 10px 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        -webkit-appearance: none;
+        margin-top: 15px;
+    }
+    
 }

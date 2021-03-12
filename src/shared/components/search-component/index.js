@@ -1,41 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useDebounce } from 'react';
 import styles from './index.styl';
 import Autosuggest from 'react-autosuggest';
-import { getByGoogle } from '../../services/auth-service'
+// import { getByGoogle } from '../../services/auth-service'
+import { searchBySongName } from '../../services/auth-service'
+
+const debounce = require('lodash.debounce');
+const throttle = require('lodash.throttle');
+
 
 const SearchComponent = (props) => {
     const [suggestions, setSuggestions] = useState([]);
     const [value, setValue] = useState('');
 
-    useEffect(() => {
-        setSuggestions([])
-    }, []);
+    useEffect(() => { setSuggestions([]) }, []);
 
-    // const getSuggestions = objectValue => {
-    //     const { href } = objectValue;
-    //     debugger;
-
-    //     const inputValue = href.trim().toLowerCase();
-    //     const inputLength = inputValue.length;
-
-    //     return inputLength === 0 ? [] : languages.filter(lang =>
-    //         lang.name.toLowerCase().slice(0, inputLength) === inputValue
-    //     );
-    // };
-
-    const getSuggestionValue = suggestion => suggestion.name;
-
-    const onSuggestionsFetchRequested = ({ value }) => {
-
-        getByGoogle(value)
+    const onSuggestionsFetchRequested = ({ value }) => 
+        searchBySongName(value)
             .then(
                 res => {
                     if (res.body) {
+                        // debugger;
                         setSuggestions(res.body)
                     }
                 }
             )
-    };
 
     const onSuggestionsClearRequested = () => {
         setSuggestions([])
@@ -48,22 +36,20 @@ const SearchComponent = (props) => {
         </div>
     );
 
-    // Autosuggest will pass through all these props to the input.
-    const inputProps = {
-        placeholder: 'Type a programming language',
-        value,
-        onChange: (event, { newValue }) => setValue(newValue)
-    };
 
     return (
-        <div>
+        <div className={styles.searchContainer}>
             <Autosuggest
                 suggestions={suggestions}
                 onSuggestionsFetchRequested={onSuggestionsFetchRequested}
                 onSuggestionsClearRequested={onSuggestionsClearRequested}
-                getSuggestionValue={getSuggestionValue}
+                getSuggestionValue={suggestion => suggestion.name}
                 renderSuggestion={renderSuggestion}
-                inputProps={inputProps}
+                inputProps={{
+                    placeholder: '',
+                    value,
+                    onChange: (event, { newValue }) => setValue(newValue)
+                }}
                 theme={styles}
             />
         </div>
