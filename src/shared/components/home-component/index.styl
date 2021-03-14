@@ -57,6 +57,7 @@
             width: auto;
         }
 
+
         .favoritesContainer {
             max-height: 75%;
             overflow: scroll;
@@ -64,12 +65,6 @@
 
             display: flex;
             text-transform: capitalize;
-
-            // .favoritesColumn:nth-child(odd) {
-            //     background: #f9beb8;
-            //     color: white;
-            //     text-align: left;
-            // }
 
             .favoritesColumn {
                 flex-grow: 1;
@@ -80,9 +75,17 @@
 
                 background: white;
                 color: black;
-                text-align: right;
+                // text-align: right;
+
+                margin-top: 0px;
                 > li {
                     padding: 4px 10px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    max-width: 24vh;
+                    display: block;
+                    overflow: hidden;
+                    padding: 7px 14px 7px 5px;
                 }
 
                 >li:nth-child(odd) {
@@ -91,10 +94,18 @@
                     text-align: left;
                 }
             }
+
+            .textRight {
+                > li {
+                    // text-align: right;
+                    padding-right: 30px;
+                }
+            }
         }
         .searchContainer {
             max-height: 20%;
             overflow: hidden;
+
         }
     }
 }
@@ -116,6 +127,7 @@ body {
     cursor: default;
     height: 6em;
     left: 0;
+    padding: 5px 0;
     line-height: 6em;
     position: fixed;
     top: 0;
@@ -200,7 +212,8 @@ body {
 @media screen and (max-width: 980px) {
 
     body {
-        padding-top: 44px;
+        // header: 44px height + 5px paddingtop + 5 px paddingbottom
+        padding-top: 54px;
     }
 
     .header {
@@ -217,7 +230,7 @@ body {
         // .header nav a[href="#menu"] {
         .header nav .barsIcon {
             font-size: 1.5em;
-            margin-top: 9px;
+            margin-top: 14px;
         }
 
         .header nav.left {

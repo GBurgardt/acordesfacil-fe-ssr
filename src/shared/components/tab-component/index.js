@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styles from './index.styl';
 
+import { useParams } from "react-router-dom";
 
 const TabComponent = () => {
     const [tab, setTab] = useState(0);
     
+    const { hrefArtist, hrefSong } = useParams();
+
     useEffect(() => {
-        fetch('http://192.168.0.243:3001/charly_garcia/no_soy_un_extranio')
+        
+        // fetch('http://192.168.0.243:3001/sui_generis/cancion_para_mi_muerte')
+        fetch(`http://192.168.0.243:3001/${hrefArtist}/${hrefSong}`)
             .then(res=>res.clone().json())
             .then(
                 res => {

@@ -49,6 +49,8 @@
     "react-autosuggest": "^10.1.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-universal-component": "^4.0.0",
     "webpack-flush-chunks": "^2.0.3",
     "winston": "^3.2.1"

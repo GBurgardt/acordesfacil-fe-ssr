@@ -1,9 +1,10 @@
+import './app.styl';
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
+import { Switch, Route } from 'react-router-dom';
 
-import './app.styl';
-
-import UniversalComponent from './components/UniversalComponent';
+import HomeComponent from './components/home-component/index';
+import TabComponent from './components/tab-component/index';
 
 /**
  * The `App` component is the entry point for the react app.
@@ -19,9 +20,13 @@ export default class App extends Component {
                     <title>Acordesfacil</title>
                 </Helmet>
 
-                <UniversalComponent name="home-component" />
-                {/* <UniversalComponent name="search-component" /> */}
-                {/* <UniversalComponent name="tab-component" /> */}
+                {/* <UniversalComponent name="home-component" /> */}
+                <Switch>
+                    <Route exact path='/' component={HomeComponent} />
+                    <Route path='/:hrefArtist/:hrefSong' component={TabComponent} />
+                    {/* <Route component={NotFound} /> */}
+                </Switch>
+                
             </div>
         );
     }

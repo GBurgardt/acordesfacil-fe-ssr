@@ -1,18 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './index.styl';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/fontawesome-free-solid'
 import SearchComponent from '../search-component';
 
+// import { getFavorites } from '../../services/auth-service'
 
 const HomeComponent = (props) => {
     
-    useEffect(() => { }, []);
+    const [favorites, setFavorites] = useState([]);
+
+    useEffect(() => {
+        // getFavorites(value)
+        //     .then(
+        //         res => {
+        //             if (res.body) {
+        //                 // debugger;
+        //                 setSuggestions(res.body)
+        //             }
+        //         }
+        //     )
+    }, []);
 
 
     return (
         <div className={styles.bodyContainer}>
-            <header className={styles.header}>
+            <div className={styles.header}>
                 <nav className={styles.left}>
                     <FontAwesomeIcon className={styles.barsIcon} icon={faBars} />
                 </nav>
@@ -20,7 +33,7 @@ const HomeComponent = (props) => {
                 <nav className={styles.right}>
                     <a href="#" className={`${styles.button} ${styles.alt}`}>Log in</a>
                 </nav>
-            </header>
+            </div>
 
             <div className={styles.bodyContent}>
                 <div className={styles.favoritesContainer}>
@@ -28,26 +41,26 @@ const HomeComponent = (props) => {
                         <li>charly garcia</li>
                         <li>john lennon</li>
                         <li>fito paez</li>
-                        <li>adrían dárgelos</li>
+                        <li>babasónicos</li>
                         <li>luis alberto spinetta</li>
                         <li>conociendo rusia</li>
                         <li>rata blanca</li>
                         <li>charly garcia</li>
                         <li>john lennon</li>
                         <li>fito paez</li>
-                        <li>adrían dárgelos</li>
+                        <li>babasónicos</li>
                         <li>luis alberto spinetta</li>
                         <li>conociendo rusia</li>
                         <li>rata blanca</li>
                         <li>charly garcia</li>
                         <li>john lennon</li>
                         <li>fito paez</li>
-                        <li>adrían dárgelos</li>
+                        <li>babasónicos</li>
                         <li>luis alberto spinetta</li>
                         <li>conociendo rusia</li>
                         <li>rata blanca</li>
                     </ul>
-                    <ul className={styles.favoritesColumn}>
+                    <ul className={`${styles.favoritesColumn} ${styles.textRight}`}>
                         <li>demoliendo hoteles</li>
                         <li>working class hero</li>
                         <li>cadaver exquisito</li>
